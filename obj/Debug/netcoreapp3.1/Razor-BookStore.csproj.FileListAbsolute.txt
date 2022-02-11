@@ -381,3 +381,4 @@ D:\project\dotnet\Razor-BookStore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netst
 D:\project\dotnet\Razor-BookStore\obj\Debug\netcoreapp3.1\Razor-BookStore.MvcApplicationPartsAssemblyInfo.cs
 D:\project\dotnet\Razor-BookStore\obj\Debug\netcoreapp3.1\Razor\Pages\BookList\Index.cshtml.g.cs
 D:\project\dotnet\Razor-BookStore\obj\Debug\netcoreapp3.1\Razor\Pages\BookList\Create.cshtml.g.cs
+D:\project\dotnet\Razor-BookStore\obj\Debug\netcoreapp3.1\Razor\Pages\BookList\Edit.cshtml.g.cs
