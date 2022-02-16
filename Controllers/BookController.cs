@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Razor_BookStore.Models;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,23 @@ namespace Razor_BookStore.Controllers
             _db = db;
         }
 
-
-        public IActionResult GetAll()
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
         {
-            return Json(new { data = _db.Book.ToList() });
+            return Json(new { data = await  _db.Book.ToListAsync() });
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var bookFromDB = await _db.Book.FirstOrDefaultAsync(u => u.Id == id);
+            if(bookFromDB == null)
+            {
+                return Json(new { success = false, message = "Error while deleteing" });
+            }
+            _db.Book.Remove(bookFromDB);
+            await _db.SaveChangesAsync();
+            return Json(new { success = true, message = "Delete success" });
         }
     }
 }
